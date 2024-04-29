@@ -12,7 +12,7 @@
 #      state: started
 #      enabled: yes
 
-name: Install nginx and start the service
+name: remove nginx
 hosts: Web
 become: yes #become is equal to -b in adhoc commands it will run with root
 tasks:
