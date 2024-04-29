@@ -21,7 +21,7 @@
       name: nginx
       state: absent
 
-- name: Stop Nginx Services
+- name: Stop nginx Service
   ansible.builtin.service:
    name: nginx
    state: stopped
