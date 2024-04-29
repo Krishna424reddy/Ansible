@@ -12,7 +12,7 @@
 #      state: started
 #      enabled: yes
 
-name: remove nginx
+name: uninstall nginx
 hosts: Web
 become: yes #become is equal to -b in adhoc commands it will run with root
 tasks:
@@ -21,7 +21,7 @@ tasks:
     name: nginx
     state: absent
 
- - name: "Stop Nginx Services"
+ - name: Stop Nginx Services
    ansible.builtin.service:
     name: nginx
     state: stopped
