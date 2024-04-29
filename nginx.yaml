@@ -12,16 +12,16 @@
 #      state: started
 #      enabled: yes
 
-name: uninstall nginx
-hosts: Web
-become: yes #become is equal to -b in adhoc commands it will run with root
-tasks:
- - name: remove nginx
-   ansible.builtin.dnf:
-    name: nginx
-    state: absent
+- name: uninstall nginx
+  hosts: Web
+  become: yes #become is equal to -b in adhoc commands it will run with root
+  tasks:
+   - name: remove nginx
+     ansible.builtin.dnf:
+      name: nginx
+      state: absent
 
- - name: Stop Nginx Services
-   ansible.builtin.service:
-    name: nginx
-    state: stopped
+- name: Stop Nginx Services
+  ansible.builtin.service:
+   name: nginx
+   state: stopped
