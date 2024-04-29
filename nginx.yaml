@@ -1,21 +1,28 @@
-# - name: Install nginx and start the service
-#   hosts: Web
-#   become: yes #become is equal to -b in adhoc commands it will run with root
-#   tasks:
-#   - name: install nginx
-#     ansible.builtin.dnf:
-#      name: nginx
-#      state: latest
-#   - name: start the service
-#     ansible.builtin.service:
-#      name: nginx
-#      state: started
-#      enabled: yes
+ # To install packages
 
-- name: uninstall nginx
-  hosts: Web
-  become: yes #become is equal to -b in adhoc commands it will run with root
-  tasks:
+ 
+ - name: Install nginx and start the service
+   hosts: Web
+   become: yes #become is equal to -b in adhoc commands it will run with root
+   tasks:
+   - name: install nginx
+     ansible.builtin.dnf:
+      name: nginx
+      state: latest
+   - name: start the service
+     ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+
+ # to uninstall packages
+
+
+ - name: uninstall nginx
+   hosts: Web
+   become: yes #become is equal to -b in adhoc commands it will run with root
+   tasks:
    - name: remove nginx
      ansible.builtin.dnf:
       name: nginx
