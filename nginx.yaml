@@ -19,4 +19,9 @@ tasks:
  - name: remove nginx
    ansible.builtin.dnf:
     name: nginx
-    state: removed
+    state: absent
+
+ - name: "Stop Nginx Services"
+   ansible.builtin.service:
+    name: stop service
+    state: stopped
