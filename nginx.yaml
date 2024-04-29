@@ -20,8 +20,3 @@
      ansible.builtin.dnf:
       name: nginx
       state: absent
-
-- name: Stop nginx Service
-  ansible.builtin.service:
-   name: nginx
-   state: stopped
