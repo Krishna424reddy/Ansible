@@ -23,5 +23,5 @@ tasks:
 
  - name: "Stop Nginx Services"
    ansible.builtin.service:
-    name: stop service
+    name: nginx
     state: stopped
